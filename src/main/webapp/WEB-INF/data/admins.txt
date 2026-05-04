@@ -1,0 +1,1 @@
+1|admin|admin123|admin@bookstore.com|ADMIN|Head Office, Colombo
