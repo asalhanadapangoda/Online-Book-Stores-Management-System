@@ -30,11 +30,14 @@ public class PaymentService {
                 String status = parts[4];
                 String method = parts[5];
 
+                Payment p;
                 if (method.equals("COD")) {
-                    payments.add(new CashOnDelivery(pId, oId, uId, amount));
+                    p = new CashOnDelivery(pId, oId, uId, amount);
                 } else {
-                    payments.add(new PayNowPayment(pId, oId, uId, amount));
+                    p = new PayNowPayment(pId, oId, uId, amount);
                 }
+                p.setStatus(status); // Correctly set the status from the file
+                payments.add(p);
             }
         }
         return payments;
