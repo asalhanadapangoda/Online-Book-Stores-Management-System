@@ -1,0 +1,4 @@
+B001|Java Programming|John Smith|29.99|Education|10|PRINTED
+B002|Design Patterns|Gof|35.50|Education|5|PRINTED
+B003|Learn Servlet & JSP|Jane Doe|19.00|Education|50|EBOOK|1.5MB|http://example.com/jsp-guide
+B004|Effective Java|Joshua Bloch|45.00|Education|15|PRINTED
