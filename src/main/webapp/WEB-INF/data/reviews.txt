@@ -1,3 +1,0 @@
-1714830000001|customer1|1|5|Amazing book, really helped with my Java exams!
-1714830000002|customer1|2|4|Good recipes, but some ingredients are hard to find.
-1777922293389|1777922213004|B001|5|Nice to learn java basics

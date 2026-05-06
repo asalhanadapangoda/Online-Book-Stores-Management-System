@@ -1,2 +1,0 @@
-ADM001|admin|admin123|admin@bookstore.com|ADMIN|Head Office, Colombo
-1777922213004|user|12345678|asalhimsanda2@gmail.com|CUSTOMER|Horana

@@ -5,9 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileService {
-    // Point this to your actual project folder to save data permanently in your editor
-    public static final String DATA_PATH = "C:\\Users\\User\\Desktop\\ Online Book Store\\src\\main\\webapp\\WEB-INF\\data\\";
-    
+    // Point this to your actual project folder to save data permanently in your
+    // editor
+    public static final String DATA_PATH = "C:\\Users\\User\\Desktop\\ Online Book Store\\data\\";
+
     public static List<String> readAllLines(String filePath) {
         List<String> lines = new ArrayList<>();
         File file = new File(filePath);
