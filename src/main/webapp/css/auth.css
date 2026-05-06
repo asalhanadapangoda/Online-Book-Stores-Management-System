@@ -1,0 +1,22 @@
+/* Auth Styles - Login and Register */
+.auth-container {
+    max-width: 400px;
+    margin: 5rem auto;
+}
+
+.auth-card {
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.btn-auth {
+    background-color: #6366f1;
+    color: white;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+}

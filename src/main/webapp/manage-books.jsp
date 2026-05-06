@@ -1,5 +1,5 @@
 <%@ page import="model.*, service.BookService, java.util.List" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="header.jsp" %>
 <% 
     String dataPath = service.FileService.DATA_PATH;
     BookService bookService = new BookService(dataPath);
@@ -36,7 +36,7 @@
                     <td><%= b.getStock() %></td>
                     <td>
                         <button class="btn btn-warning btn-sm" onclick="editBook('<%= b.getId() %>', '<%= b.getTitle().replace("'", "\\'") %>', '<%= b.getAuthor().replace("'", "\\'") %>', <%= b.getPrice() %>, '<%= b.getCategory().replace("'", "\\'") %>', <%= b.getStock() %>, '<%= b.getType() %>', '<%= (b instanceof EBook) ? ((EBook)b).getFileSize() : "" %>', '<%= (b instanceof EBook) ? ((EBook)b).getDownloadLink() : "" %>')">Edit</button>
-                        <a href="../admin?action=deleteBook&id=<%= b.getId() %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                        <a href="admin?action=deleteBook&id=<%= b.getId() %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
                     </td>
                 </tr>
                 <% } %>
@@ -49,7 +49,7 @@
 <div class="modal fade" id="addBookModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="../admin" method="POST">
+            <form action="admin" method="POST">
                 <input type="hidden" name="action" value="addBook">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Book</h5>
@@ -114,7 +114,7 @@
 <div class="modal fade" id="editBookModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="../admin" method="POST">
+            <form action="admin" method="POST">
                 <input type="hidden" name="action" value="updateBook">
                 <input type="hidden" name="id" id="editId">
                 <div class="modal-header">
@@ -204,4 +204,4 @@ function editBook(id, title, author, price, category, stock, type, fileSize, dow
 }
 </script>
 
-<%@ include file="../footer.jsp" %>
+<%@ include file="footer.jsp" %>

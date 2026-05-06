@@ -1,4 +1,5 @@
-<%@ include file="../header.jsp" %>
+<%@ include file="header.jsp" %>
+<link href="${pageContext.request.contextPath}/css/admin.css" rel="stylesheet">
 <h2 class="mb-4">Admin Dashboard</h2>
 <div class="row g-4">
     <div class="col-md-4 mb-4">
@@ -47,4 +48,4 @@
         </div>
     </div>
 </div>
-<%@ include file="../footer.jsp" %>
+<%@ include file="footer.jsp" %>

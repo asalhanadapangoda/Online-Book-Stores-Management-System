@@ -1,5 +1,5 @@
 <%@ page import="model.User, service.UserService, java.util.List" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="header.jsp" %>
 <% 
     String dataPath = service.FileService.DATA_PATH;
     UserService userService = new UserService(dataPath);
@@ -35,7 +35,7 @@
                     <td><span class="badge bg-info"><%= u.getRole() %></span></td>
                     <td><%= u.getAddress() %></td>
                     <td>
-                        <a href="../admin?action=deleteUser&id=<%= u.getId() %>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Delete this user?')">Remove</a>
+                        <a href="admin?action=deleteUser&id=<%= u.getId() %>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Delete this user?')">Remove</a>
                     </td>
                 </tr>
                 <% 
@@ -46,4 +46,4 @@
         </table>
     </div>
 </div>
-<%@ include file="../footer.jsp" %>
+<%@ include file="footer.jsp" %>

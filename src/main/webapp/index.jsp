@@ -1,4 +1,5 @@
 <%@ include file="header.jsp" %>
+<link href="${pageContext.request.contextPath}/css/store.css" rel="stylesheet">
 <div class="row align-items-center py-5">
     <div class="col-md-6">
         <h1 class="display-4 fw-bold">Find Your Next Great Read</h1>

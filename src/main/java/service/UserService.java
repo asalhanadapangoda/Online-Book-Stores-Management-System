@@ -119,4 +119,13 @@ public class UserService {
         }
         return found;
     }
+
+    public User getUserById(String id) {
+        for (User u : getAllUsers()) {
+            if (u.getId().equals(id)) {
+                return u;
+            }
+        }
+        return null;
+    }
 }

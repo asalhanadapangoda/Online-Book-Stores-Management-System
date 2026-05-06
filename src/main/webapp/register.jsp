@@ -1,4 +1,5 @@
 <%@ include file="header.jsp" %>
+<link href="${pageContext.request.contextPath}/css/auth.css" rel="stylesheet">
 <div class="row justify-content-center">
     <div class="col-md-6">
         <div class="card shadow">

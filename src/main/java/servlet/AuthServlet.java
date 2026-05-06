@@ -32,7 +32,7 @@ public class AuthServlet extends HttpServlet {
                 session.setAttribute("cart", cartService.getCartItems(user.getId()));
 
                 if ("ADMIN".equals(user.getRole())) {
-                    response.sendRedirect(request.getContextPath() + "/admin/dashboard.jsp");
+                    response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
                 } else {
                     response.sendRedirect(request.getContextPath() + "/index.jsp");
                 }

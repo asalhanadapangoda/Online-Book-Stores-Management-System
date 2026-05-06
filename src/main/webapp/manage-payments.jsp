@@ -1,5 +1,5 @@
 <%@ page import="model.Payment, service.PaymentService, java.util.List" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="header.jsp" %>
 <% 
     String dataPath = service.FileService.DATA_PATH;
     PaymentService paymentService = new PaymentService(dataPath);
@@ -37,7 +37,7 @@
                     </td>
                     <td>
                         <% if ("PENDING".equals(p.getStatus())) { %>
-                        <form action="../admin" method="POST" class="d-inline">
+                        <form action="admin" method="POST" class="d-inline">
                             <input type="hidden" name="action" value="updatePayment">
                             <input type="hidden" name="paymentId" value="<%= p.getPaymentId() %>">
                             <input type="hidden" name="status" value="PAID">
@@ -51,4 +51,4 @@
         </table>
     </div>
 </div>
-<%@ include file="../footer.jsp" %>
+<%@ include file="footer.jsp" %>

@@ -99,16 +99,30 @@
                         <h4 class="mb-4">Customer Feedback</h4>
                         <% 
                             service.ReviewService reviewService = new service.ReviewService(dataPath);
+                            service.UserService userService = new service.UserService(dataPath);
                             List<Review> reviews = reviewService.getReviewsByBookId(b.getId());
                             if (!reviews.isEmpty()) {
                                 for (Review r : reviews) {
+                                    User reviewer = userService.getUserById(r.getUserId());
+                                    String reviewerName = (reviewer != null) ? reviewer.getUsername() : "Unknown User";
                         %>
                             <div class="border-bottom pb-4 mb-4 last-child-mb-0">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <span class="fw-bold"><i class="bi bi-person-circle me-2"></i>User: <%= r.getUserId() %></span>
-                                    <span class="text-warning h5 mb-0">
-                                        <%= "★".repeat(r.getRating()) + "☆".repeat(5-r.getRating()) %>
-                                    </span>
+                                    <span class="fw-bold"><i class="bi bi-person-circle me-2"></i>User: <%= reviewerName %></span>
+                                    <div class="mb-0">
+                                        <% 
+                                            String badgeClass = "secondary";
+                                            String rateText = "Unknown";
+                                            switch(r.getRating()) {
+                                                case 5: badgeClass = "success"; rateText = "Excellent"; break;
+                                                case 4: badgeClass = "info text-dark"; rateText = "Very Good"; break;
+                                                case 3: badgeClass = "primary"; rateText = "Good"; break;
+                                                case 2: badgeClass = "warning text-dark"; rateText = "Fair"; break;
+                                                case 1: badgeClass = "danger"; rateText = "Poor"; break;
+                                            }
+                                        %>
+                                        <span class="badge bg-<%= badgeClass %>"><%= rateText %></span>
+                                    </div>
                                 </div>
                                 <p class="text-muted mb-0"><%= r.getComment() %></p>
                             </div>

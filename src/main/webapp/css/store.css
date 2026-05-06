@@ -1,0 +1,22 @@
+/* Store Styles - Books, Cart, Orders */
+.book-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.book-card:hover {
+    transform: scale(1.03);
+}
+
+.price-tag {
+    color: #6366f1;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.cart-item {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 0;
+}

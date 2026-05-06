@@ -41,7 +41,7 @@ public class AdminServlet extends HttpServlet {
             } else {
                 bookService.addBook(new PrintedBook(id, title, author, price, category, stock));
             }
-            response.sendRedirect(request.getContextPath() + "/admin/manage-books.jsp");
+            response.sendRedirect(request.getContextPath() + "/manage-books.jsp");
         } else if ("updateBook".equals(action)) {
             String id = request.getParameter("id");
             String title = request.getParameter("title");
@@ -58,7 +58,7 @@ public class AdminServlet extends HttpServlet {
             } else {
                 bookService.updateBook(new PrintedBook(id, title, author, price, category, stock));
             }
-            response.sendRedirect(request.getContextPath() + "/admin/manage-books.jsp");
+            response.sendRedirect(request.getContextPath() + "/manage-books.jsp");
         } else if ("addAdmin".equals(action)) {
             String id = "ADM" + System.currentTimeMillis();
             String u = request.getParameter("username");
@@ -66,7 +66,7 @@ public class AdminServlet extends HttpServlet {
             String e = request.getParameter("email");
             String a = "N/A"; // Admins don't need address
             userService.register(new Admin(id, u, p, e, a));
-            response.sendRedirect(request.getContextPath() + "/admin/manage-admins.jsp");
+            response.sendRedirect(request.getContextPath() + "/manage-admins.jsp");
         } else if ("updateAdmin".equals(action)) {
             String id = request.getParameter("id");
             String u = request.getParameter("username");
@@ -74,12 +74,12 @@ public class AdminServlet extends HttpServlet {
             String e = request.getParameter("email");
             String a = "N/A";
             userService.updateUser(new Admin(id, u, p, e, a));
-            response.sendRedirect(request.getContextPath() + "/admin/manage-admins.jsp");
+            response.sendRedirect(request.getContextPath() + "/manage-admins.jsp");
         } else if ("updatePayment".equals(action)) {
             String pId = request.getParameter("paymentId");
             String status = request.getParameter("status");
             paymentService.updatePaymentStatus(pId, status);
-            response.sendRedirect(request.getContextPath() + "/admin/manage-payments.jsp");
+            response.sendRedirect(request.getContextPath() + "/manage-payments.jsp");
         }
     }
 
@@ -87,10 +87,10 @@ public class AdminServlet extends HttpServlet {
         String action = request.getParameter("action");
         if ("deleteBook".equals(action)) {
             bookService.deleteBook(request.getParameter("id"));
-            response.sendRedirect(request.getContextPath() + "/admin/manage-books.jsp");
+            response.sendRedirect(request.getContextPath() + "/manage-books.jsp");
         } else if ("deleteUser".equals(action)) {
             userService.deleteUser(request.getParameter("id"));
-            response.sendRedirect(request.getContextPath() + "/admin/manage-users.jsp");
+            response.sendRedirect(request.getContextPath() + "/manage-users.jsp");
         }
     }
 }

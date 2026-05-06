@@ -1,5 +1,5 @@
 <%@ page import="model.*, service.UserService, java.util.List, java.util.ArrayList" %>
-<%@ include file="../header.jsp" %>
+<%@ include file="header.jsp" %>
 <% 
     String dataPath = service.FileService.DATA_PATH;
     UserService userService = new UserService(dataPath);
@@ -126,4 +126,4 @@ function editAdmin(id, username, password, email) {
 }
 </script>
 
-<%@ include file="../footer.jsp" %>
+<%@ include file="footer.jsp" %>

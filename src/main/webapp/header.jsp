@@ -35,7 +35,7 @@
                         <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/register.jsp">Register</a></li>
                     <% } else { %>
                         <% if ("ADMIN".equals(user.getRole())) { %>
-                            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/admin/dashboard.jsp">Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/dashboard.jsp">Dashboard</a></li>
                         <% } %>
                         <% if ("CUSTOMER".equals(user.getRole())) { %>
                             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/orders.jsp">Orders</a></li>
